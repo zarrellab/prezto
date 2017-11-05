@@ -1,40 +1,6 @@
 #
 # Enables local Python package installation.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#   Sebastian Wiesner <lunaryorn@googlemail.com>
-#
-
-# Load manually installed pyenv into the shell session.
-if [[ -s "$HOME/.pyenv/bin/pyenv" ]]; then
-  path=("$HOME/.pyenv/bin" $path)
-  export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
-
-# Load package manager installed pyenv into the shell session.
-elif (( $+commands[pyenv] )); then
-  export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
-
-# Prepend PEP 370 per user site packages directory, which defaults to
-# ~/Library/Python on Mac OS X and ~/.local elsewhere, to PATH. The
-# path can be overridden using PYTHONUSERBASE.
-else
-  if [[ -n "$PYTHONUSERBASE" ]]; then
-    path=($PYTHONUSERBASE/bin $path)
-  elif [[ "$OSTYPE" == darwin* ]]; then
-    path=($HOME/Library/Python/*/bin(N) $path)
-  else
-    # This is subject to change.
-    path=($HOME/.local/bin $path)
-  fi
-fi
-
-# Return if requirements are not found.
-if (( ! $+commands[python] && ! $+commands[pyenv] )); then
-  return 1
-fi
 
 function _python-workon-cwd {
   # Check if this is a Git repo
@@ -94,23 +60,6 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
   # Disable the virtualenv prompt.
   VIRTUAL_ENV_DISABLE_PROMPT=1
 
-  # Create a sorted array of available virtualenv related 'pyenv' commands to
-  # look for plugins of interest. Scanning shell '$path' isn't enough as they
-  # can exist in 'pyenv' synthesized paths (e.g., '~/.pyenv/plugins') instead.
-  local -a pyenv_plugins
-  if (( $+commands[pyenv] )); then
-    pyenv_plugins=(${(@oM)${(f)"$(pyenv commands --no-sh 2>/dev/null)"}:#virtualenv*})
-  fi
-
-  if (( $pyenv_plugins[(i)virtualenv-init] <= $#pyenv_plugins )); then
-    # Enable 'virtualenv' with 'pyenv'.
-    eval "$(pyenv virtualenv-init -)"
-
-    # Optionally activate 'virtualenvwrapper' plugin when available.
-    if (( $pyenv_plugins[(i)virtualenvwrapper(_lazy|)] <= $#pyenv_plugins )); then
-      pyenv "$pyenv_plugins[(R)virtualenvwrapper(_lazy|)]"
-    fi
-  else
     # Fallback to 'virtualenvwrapper' without 'pyenv' wrapper if available
     # in '$path' or in an alternative location on a Debian based system.
     virtenv_sources=(
@@ -120,11 +69,7 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
     if (( $#virtenv_sources )); then
       source "${virtenv_sources[1]}"
     fi
-
     unset virtenv_sources
-  fi
-
-  unset pyenv_plugins
 fi
 
 # Load PIP completion.

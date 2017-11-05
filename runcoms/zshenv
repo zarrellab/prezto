@@ -1,11 +1,17 @@
 #
 # Defines environment variables.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Default Path
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+# Ensure hombrew programs have priority
+export PATH="/usr/local/bin:$PATH"
+
+# Python
+export PYTHONPATH="/usr/bin"
+
