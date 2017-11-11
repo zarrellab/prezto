@@ -46,17 +46,17 @@ alias scp='noglob noremoteglob scp'
 alias sftp='noglob sftp'
 
 # Define general aliases.
-alias _='sudo'
-alias b='${(z)BROWSER}'
+# alias _='sudo'
+# alias b='${(z)BROWSER}'
 
 alias diffu="diff --unified"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
-alias p='${(z)PAGER}'
-alias po='popd'
-alias pu='pushd'
-alias sa='alias | grep -i'
-alias type='type -a'
+# alias p='${(z)PAGER}'
+# alias po='popd'
+# alias pu='pushd'
+# alias sa='alias | grep -i'
+# alias type='type -a'
 
 # Safe ops. Ask the user before doing anything destructive.
 alias rmi="${aliases[rm]:-rm} -i"
@@ -111,7 +111,7 @@ alias lk='ll -Sr'        # Lists sorted by size, largest last.
 alias lt='ll -tr'        # Lists sorted by date, most recent last.
 alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
-alias sl='ls'            # I often screw this up.
+# alias sl='ls'            # I often screw this up.
 
 # Grep
 if zstyle -t ':prezto:module:utility:grep' color; then
@@ -140,8 +140,8 @@ else
   fi
 fi
 
-alias pbc='pbcopy'
-alias pbp='pbpaste'
+# alias pbc='pbcopy'
+# alias pbp='pbpaste'
 
 # File Download
 if (( $+commands[curl] )); then
@@ -159,13 +159,13 @@ fi
 
 alias du='du -kh'
 
-if [[ "$OSTYPE" == (darwin*|*bsd*) ]]; then
-  alias topc='top -o cpu'
-  alias topm='top -o vsize'
-else
-  alias topc='top -o %CPU'
-  alias topm='top -o %MEM'
-fi
+# if [[ "$OSTYPE" == (darwin*|*bsd*) ]]; then
+#   alias topc='htop -o cpu'
+#   alias topm='htop -o vsize'
+# else
+#   alias topc='htop -o %CPU'
+#   alias topm='htop -o %MEM'
+# fi
 
 # Miscellaneous
 
@@ -181,7 +181,7 @@ fi
 #
 
 # Makes a directory and changes to it.
-function mkdcd {
+function mkcd {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
@@ -206,7 +206,7 @@ function slit {
 }
 
 # Finds files and executes a command on them.
-function find-exec {
+function find-x {
   find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
 }
 

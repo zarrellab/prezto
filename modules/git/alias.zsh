@@ -26,6 +26,9 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 # Aliases
 #
 
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+
 if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   # Git
   alias g='git'
