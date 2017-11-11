@@ -56,6 +56,10 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
   zstyle -T ':prezto:module:python:virtualenv' initialize ; then
   # Set the directory where virtual environments are stored.
   export WORKON_HOME="${WORKON_HOME:-$HOME/.virtualenvs}"
+  # Set python to brew installation
+  export VIRTUALENV_PYTHON="/usr/local/bin/python3"
+  export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+  export PROJECT_HOME="$HOME/Coding"
 
   # Disable the virtualenv prompt.
   VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -64,7 +68,7 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
     # in '$path' or in an alternative location on a Debian based system.
     virtenv_sources=(
       ${(@Ov)commands[(I)virtualenvwrapper(_lazy|).sh]}
-      /usr/share/virtualenvwrapper/virtualenvwrapper(_lazy|).sh(OnN)
+      /usr/local/bin/virtualenvwrapper/virtualenvwrapper(_lazy|).sh(OnN)
     )
     if (( $#virtenv_sources )); then
       source "${virtenv_sources[1]}"
