@@ -1,6 +1,18 @@
 Modules
 =======
 
+To load zsh plugins as modules
+------------------------------
+1. Fork plugin repo
+2. `cd $ZPREZTODIR/modules/zsh`
+3. `git submodule add [fork url]`
+4. `cd` into new dir
+5. Symlink to plugin.zsh for prezto to recognize: `ln -s [plugin.zsh] init.zsh`
+6. Commit changes to submodule
+7. Add your fork repo as an origin: `git remote add myfork [fork url]`
+8. Push and tell git to always push to fork: `git push -u myrepo master`
+9. `$ZPREZTODIR` commit changes to prezto
+
 Load modules in *zpreztorc*. The order matters.
 
 ```sh
