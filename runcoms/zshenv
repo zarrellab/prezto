@@ -12,6 +12,9 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 # Ensure hombrew programs have priority
 export PATH="/usr/local/bin:$PATH"
 
+# Private envs
+source $HOME/.vo-env
+
 # Python
 export PYTHONPATH="/usr/bin"
 
