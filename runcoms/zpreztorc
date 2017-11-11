@@ -38,6 +38,7 @@ zstyle ':prezto:load' pmodule \
   'python' \
   'ruby' \
   'syntax-highlighting' \
+  'zsh/alias-tips' \
   'autosuggestions'
 
 #
