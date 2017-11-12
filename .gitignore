@@ -1,3 +1,6 @@
 *.zwc
 *.zwc.old
 modules/*/cache.zsh
+
+.DS_Store
+.DS_Store?
