@@ -28,6 +28,7 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
+alias gl='git log --topo-order --stat --graph --pretty=format:"${_git_log_medium_format}"'
 
 if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   # Git
