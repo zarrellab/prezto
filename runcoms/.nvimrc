@@ -20,6 +20,13 @@ Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-rooter'
 Plug 'sirver/ultisnips'
 Plug 'shougo/deoplete.nvim'
+Plug 'raimondi/delimitmate'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'valloric/matchtagalways'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'danro/rename.vim'
 
 call plug#end()
 
@@ -33,6 +40,19 @@ let g:airline#extensions#ale#enabled = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " go to next error
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '✘'
+
+""" HTML JSX quick syntax
+let g:user_emmet_leader_key='<C-M>'
+" tag highlighting
+let g:mta_filetypes = {
+	\'javascript.jsx' : 1,
+  \'html'           : 1,
+  \'xhtml'          : 1,
+  \'xml'            : 1,
+  \'jinja'          : 1,
+\}
 
 """ NERDtree
 " auto-open on directory
