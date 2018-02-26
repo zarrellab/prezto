@@ -10,7 +10,8 @@ fi
 # Aliases
 alias v=$EDITOR
 alias shelltime='for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done'
-alias a.='atom .'
+alias a='atom'
+alias www='git checkout stage && git pull upstream stage && npm i && bundle'
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
