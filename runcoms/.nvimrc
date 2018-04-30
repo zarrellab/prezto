@@ -19,7 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-rooter'
 Plug 'sirver/ultisnips'
-Plug 'shougo/deoplete.nvim'
+Plug 'shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-surround'
 Plug 'valloric/matchtagalways'
@@ -84,3 +84,11 @@ set noshowmode
 set background=dark
 
 colorscheme base16-spacemacs
+
+""" autocomplete
+let g:deoplete#enable_at_startup = 1
+
+""" misc maps
+"save
+nmap <silent> <Leader>s :w<CR>
+
