@@ -98,7 +98,7 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
   export PROJECT_HOME="$HOME/Coding"
 
   # Disable the virtualenv prompt.
-  VIRTUAL_ENV_DISABLE_PROMPT=1
+  export VIRTUAL_ENV_DISABLE_PROMPT=1
 
     # Fallback to 'virtualenvwrapper' without 'pyenv' wrapper if available
     # in '$path' or in an alternative location on a Debian based system.
