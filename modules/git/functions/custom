@@ -1,0 +1,8 @@
+function detect_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+commit () {
+  git commit -m "$(detect_git_branch) - $1"
+}
+
