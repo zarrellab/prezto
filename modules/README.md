@@ -134,7 +134,7 @@ Initializes OCaml package management.
 OSX
 ---
 
-Defines Mac OS X aliases and functions.
+Defines macOS aliases and functions.
 
 Pacman
 ------
@@ -144,7 +144,7 @@ Provides aliases and functions for the Pacman package manager and frontends.
 Perl
 ----
 
-Enables local Perl module installation on Mac OS X and defines alises.
+Enables local Perl module installation on macOS and defines alises.
 
 Prompt
 ------
