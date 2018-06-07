@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'octref/RootIgnore'
 Plug 'myusuf3/numbers.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
@@ -33,8 +34,15 @@ call plug#end()
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
+""" syntax highlighting
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
 """ linting
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {
+  \'javascript': ['eslint']
+\}
 " go to previous error
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " go to next error
@@ -63,6 +71,10 @@ let NERDTreeShowHidden=1
 map <Tab>t :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let loaded_netrwPlugin = 1
+let NERDTreeRespectWildIgnore = 1
+" close vim if only tree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """ searching
 " search files; respect gitignore
