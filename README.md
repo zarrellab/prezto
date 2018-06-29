@@ -1,5 +1,6 @@
 Prezto — Instantly Awesome Zsh
 ==============================
+Brandon's personal config, forked from Prezto
 
 Prezto is the configuration framework for [Zsh][1]; it enriches the command line
 interface environment with sane defaults, aliases, functions, auto completion,
@@ -20,7 +21,7 @@ version is 4.3.11.
   2. Clone the repository:
 
      ```console
-     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+     git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
      ```
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
@@ -39,10 +40,10 @@ version is 4.3.11.
      more complicated setups, it is recommended that you back up your original
      configs and replace them with the provided prezto runcoms.
 
-  4. Set Zsh as your default shell:
+  4. Set homebrew installed Zsh as your default shell:
 
      ```console
-     chsh -s /bin/zsh
+     chsh -s /usr/local/bin/zsh
      ```
 
   5. Open a new Zsh terminal window or tab.
