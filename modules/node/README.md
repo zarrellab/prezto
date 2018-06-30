@@ -10,8 +10,7 @@ nvm
 [nvm][5] allows for managing multiple, isolated Node.js installations in the
 home directory.
 
-install via homebrew, along with znvm:
-`curl -o- https://raw.githubusercontent.com/Kasahs/.znvm/master/install.sh | zsh`
+install via homebrew
 
 nodenv
 ------

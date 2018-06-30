@@ -2,11 +2,6 @@
 # Loads the Node Version Manager and enables npm completion.
 #
 
-# Load znvm script for faster load times
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-source $HOME/.znvm/znvm.sh
-
 # Return if requirements are not found.
 if (( ! $+commands[node] )); then
   return 1
