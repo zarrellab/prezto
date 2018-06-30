@@ -43,7 +43,8 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'terminal' \
   'utility' \
-  'zsh/alias-tips'
+  'zsh/alias-tips' \
+  'zsh/znvm'
 
 #
 # Autosuggestions
