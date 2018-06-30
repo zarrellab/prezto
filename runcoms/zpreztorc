@@ -44,6 +44,7 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'utility' \
   'zsh/alias-tips' \
+  'zsh/nvim' \
   'zsh/znvm'
 
 #
