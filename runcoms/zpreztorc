@@ -24,12 +24,14 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
+  'environment' \
+  'archive' \
   'autosuggestions' \
   'completion' \
   'directory' \
   'docker' \
   'editor' \
-  'environment' \
+  'fasd' \
   'git' \
   'history-substring-search' \
   'history' \
