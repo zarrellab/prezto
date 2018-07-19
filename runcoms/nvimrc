@@ -27,6 +27,7 @@ Plug 'valloric/matchtagalways'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'danro/rename.vim'
+Plug 'rking/ag.vim'
 
 call plug#end()
 
@@ -44,7 +45,9 @@ let g:jsx_ext_required = 0
 """ linting
 let g:airline#extensions#ale#enabled = 1
 let g:ale_fixers = {
-  \'javascript': ['eslint']
+  \'javascript': ['eslint'],
+  \'markdown': ['prettier'],
+  \'python': ['pylint'],
 \}
 " go to previous error
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -98,7 +101,7 @@ let g:airline_theme='base16'
 set noshowmode
 set background=dark
 
-colorscheme base16-spacemacs
+colorscheme base16-onedark
 
 """ autocomplete
 let g:deoplete#enable_at_startup = 1
