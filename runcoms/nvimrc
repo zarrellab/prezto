@@ -52,6 +52,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'enricobacis/vim-airline-clock'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vitalk/vim-simple-todo'
 
 call plug#end()
 
