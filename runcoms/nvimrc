@@ -17,7 +17,7 @@ Plug 'myusuf3/numbers.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
+Plug '/usr/opt/fzf'
 Plug 'airblade/vim-rooter'
 Plug 'sirver/ultisnips'
 Plug 'raimondi/delimitmate'
@@ -57,8 +57,8 @@ Plug 'vitalk/vim-simple-todo'
 call plug#end()
 
 """ python location for nvim
-let g:python3_host_prog = '/usr/local/bin/python3'
-let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/bin/python'
+let g:python_host_prog = '/usr/bin/python2'
 
 """ guttter numbers
 nnoremap <F3> :NumbersToggle<CR>
@@ -147,7 +147,7 @@ let g:LanguageClient_serverCommands = {
   \ 'typescript': ['javascript-typescript-stdio'],
   \ 'javascript.jsx': ['javascript-typescript-stdio'],
   \ 'typescript.tsx': ['javascript-typescript-stdio'],
-  \ 'python': ['/usr/local/bin/pyls'],
+  \ 'python': ['/usr/bin/pyls'],
 \ }
 " lang server keys
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

@@ -8,9 +8,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 # Default Path
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-# Ensure hombrew programs have priority
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/home/bz/.gem/ruby/2.5.0/bin"
 
 # Private envs
 source $HOME/.zshprivate
