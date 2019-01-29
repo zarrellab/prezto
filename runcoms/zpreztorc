@@ -3,18 +3,6 @@
 #
 
 #
-# PATH
-#
-
-# Default Path
-DEFAULT_PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-# Ensure hombrew programs have priority
-BREW_PATH="/usr/local/bin"
-# Gnubin path for coreutils commands without the preceding 'g'
-GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin"
-export PATH="$GNU_PATH:$BREW_PATH:$DEFAULT_PATH"
-
-#
 # General
 #
 
