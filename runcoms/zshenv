@@ -7,11 +7,6 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# Default Path
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-# Ensure hombrew programs have priority
-export PATH="/usr/local/bin:$PATH"
-
 # Private envs
 source $HOME/.zshprivate
 
