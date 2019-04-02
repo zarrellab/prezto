@@ -24,7 +24,7 @@ export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
 #
 
 # Homebrew
-alias brewU='brew update && brew upgrade && brew cleanup'
+alias brewU='brew update && brew upgrade && cask upgrade && brew cleanup'
 alias brewc='brew cleanup'
 alias brewC='brew cleanup --force'
 alias brewi='brew install'
