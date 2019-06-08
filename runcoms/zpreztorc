@@ -3,18 +3,6 @@
 #
 
 #
-# PATH
-#
-
-# Default Path
-DEFAULT_PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-# Ensure hombrew programs have priority
-BREW_PATH="/usr/local/bin"
-# Gnubin path for coreutils commands without the preceding 'g'
-GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin"
-export PATH="$GNU_PATH:$BREW_PATH:$DEFAULT_PATH"
-
-#
 # General
 #
 
@@ -150,13 +138,6 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:prompt' show-return-val 'yes'
 
 #
-# Ruby
-#
-
-# Auto switch the Ruby version on directory change.
-# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
-
-#
 # Python
 #
 
@@ -165,6 +146,13 @@ zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 
 # Automatically initialize virtualenvwrapper if pre-requisites are met.
 zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+
+#
+# Ruby
+#
+
+# Auto switch the Ruby version on directory change.
+# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 #
 # Screen

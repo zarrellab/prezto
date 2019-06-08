@@ -7,16 +7,19 @@
 #   Patrick Bos <egpbos@gmail.com>
 #
 
-# Load manually installed pyenv into the shell session.
-if [[ -s "$HOME/.pyenv/bin/pyenv" ]]; then
+# Load manually installed pyenv into the path
+if [[ -n "$PYENV_ROOT" && -s "$PYENV_ROOT/bin/pyenv" ]]; then
+  path=("$PYENV_ROOT/bin" $path)
+elif [[ -s "$HOME/.pyenv/bin/pyenv" ]]; then
   path=("$HOME/.pyenv/bin" $path)
-  export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
+fi
 
-# Load package manager installed pyenv into the shell session.
-elif (( $+commands[pyenv] )); then
-  export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
+# Load pyenv into the current python session
+if (( $+commands[pyenv] )); then
+  if [[ -z "$PYENV_ROOT" ]]; then
+    export PYENV_ROOT=$(pyenv root)
+  fi
+  eval "$(pyenv init - --no-rehash zsh)"
 
 # Prepend PEP 370 per user site packages directory, which defaults to
 # ~/Library/Python on macOS and ~/.local elsewhere, to PATH. The
@@ -57,7 +60,7 @@ function _python-workon-cwd {
   local ENV_NAME=""
   if [[ -f "$PROJECT_ROOT/.venv" ]]; then
     ENV_NAME="$(cat "$PROJECT_ROOT/.venv")"
-  elif [[ -f "$PROJECT_ROOT/.venv/bin/activate" ]];then
+  elif [[ -f "$PROJECT_ROOT/.venv/bin/activate" ]]; then
     ENV_NAME="$PROJECT_ROOT/.venv"
   elif [[ "$PROJECT_ROOT" != "." ]]; then
     ENV_NAME="${PROJECT_ROOT:t}"
@@ -97,8 +100,11 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
   export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
   export PROJECT_HOME="$HOME/Coding"
 
-  # Disable the virtualenv prompt.
-  export VIRTUAL_ENV_DISABLE_PROMPT=1
+  # Disable the virtualenv prompt. Note that we use the magic value used by the
+  # pure prompt because there's some additional logic in that prompt which tries
+  # to figure out if a user set this variable and disable the python portion of
+  # that prompt based on it which is the exact opposite of what we want to do.
+  export VIRTUAL_ENV_DISABLE_PROMPT=12
 
     # Fallback to 'virtualenvwrapper' without 'pyenv' wrapper if available
     # in '$path' or in an alternative location on a Debian based system.
@@ -127,18 +133,23 @@ fi
 
 # Load PIP completion.
 if (( $#commands[(i)pip(|[23])] )); then
-  cache_file="${TMPDIR:-/tmp}/prezto-python-cache.$UID.zsh"
+  cache_file="${TMPDIR:-/tmp}/prezto-pip-cache.$UID.zsh"
 
   # Detect and use one available from among 'pip', 'pip2', 'pip3' variants
   pip_command="$commands[(i)pip(|[23])]"
 
-  if [[ "$pip_command" -nt "$cache_file" || ! -s "$cache_file" ]]; then
+  if [[ "$pip_command" -nt "$cache_file" \
+        || "${ZDOTDIR:-$HOME}/.zpreztorc" -nt "$cache_file" \
+        || ! -s "$cache_file" ]]; then
     # pip is slow; cache its output. And also support 'pip2', 'pip3' variants
     $pip_command completion --zsh \
-      | sed -e "s|compctl -K [-_[:alnum:]]* pip|& pip2 pip3|" >! "$cache_file" 2> /dev/null
+      | sed -e "s/\(compctl -K [-_[:alnum:]]* pip\).*/\1{,2,3}{,.{0..9}}/" \
+      >! "$cache_file" \
+      2> /dev/null
   fi
 
   source "$cache_file"
+
   unset cache_file pip_command
 fi
 
