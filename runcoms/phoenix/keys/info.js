@@ -1,4 +1,4 @@
-let info = new Key('i', MOD_S, () => {
+let info = new Key('/', MOD_S, () => {
     const windows = Space.active().windows();
 
     for (window of windows) {

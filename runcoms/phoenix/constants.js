@@ -91,5 +91,41 @@ var windowLocations = {
         x: ((thirdWidth * 2) + paddingLeft) + paddingCenter,
         width: thirdWidth,
         height: scr.height - paddingBottom
+    },
+    leftThirdTop: {
+        y: paddingTop,
+        x: paddingLeft,
+        width: thirdWidth - paddingCenter,
+        height: halfHeight
+    },
+    leftThirdBottom: {
+        y: (halfHeight + paddingTop) + paddingMiddle,
+        x: paddingLeft,
+        width: thirdWidth - paddingCenter,
+        height: halfHeight
+    },
+    midThirdTop: {
+        y: paddingTop,
+        x: thirdWidth + (paddingLeft / 2),
+        width: thirdWidth + paddingLeft,
+        height: halfHeight
+    },
+    midThirdBottom: {
+        y: (halfHeight + paddingTop) + paddingMiddle,
+        x: thirdWidth + (paddingLeft / 2),
+        width: thirdWidth + paddingLeft,
+        height: halfHeight
+    },
+    rightThirdTop: {
+        y: paddingTop,
+        x: ((thirdWidth * 2) + paddingLeft) + paddingCenter,
+        width: thirdWidth,
+        height: halfHeight
+    },
+    rightThirdBottom: {
+        y: (halfHeight + paddingTop) + paddingMiddle,
+        x: ((thirdWidth * 2) + paddingLeft) + paddingCenter,
+        width: thirdWidth,
+        height: halfHeight
     }
 }

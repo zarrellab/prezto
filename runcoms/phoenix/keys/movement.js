@@ -54,24 +54,34 @@ var rightThird = new Key('right', MOD, () => {
 });
 
 // Move focused window to corners
-var topRight = new Key('o', MOD, () => {
+var topRight = new Key('o', MOD_S, () => {
     if (VERBOSE) { movementModal('top right'); }
-    Window.focused().setFrame(windowLocations.topRight);
+    Window.focused().setFrame(windowLocations.rightThirdTop);
 });
 
-var topLeft = new Key('y', MOD, () => {
+var topLeft = new Key('u', MOD_S, () => {
     if (VERBOSE) { movementModal('top left'); }
-    Window.focused().setFrame(windowLocations.topLeft);
+    Window.focused().setFrame(windowLocations.leftThirdTop);
 });
 
-var bottomRight = new Key('i', MOD, () => {
+var midthirdTop = new Key('i', MOD_S, () => {
+    if (VERBOSE) { movementModal('mid third'); }
+    Window.focused().setFrame(windowLocations.midThirdTop);
+});
+
+var bottomRight = new Key('o', MOD, () => {
     if (VERBOSE) { movementModal('bottom right'); }
-    Window.focused().setFrame(windowLocations.bottomRight);
+    Window.focused().setFrame(windowLocations.rightThirdBottom);
 });
 
 var bottomLeft = new Key('u', MOD, () => {
     if (VERBOSE) { movementModal('bottom left'); }
-    Window.focused().setFrame(windowLocations.bottomLeft);
+    Window.focused().setFrame(windowLocations.leftThirdBottom);
+});
+
+var midthirdBottom = new Key('i', MOD, () => {
+    if (VERBOSE) { movementModal('mid third'); }
+    Window.focused().setFrame(windowLocations.midThirdBottom);
 });
 
 // Maximize window (not fullscreen)
