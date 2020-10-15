@@ -65,3 +65,5 @@ fi
 # Java Version Manager
 eval "$(jenv init -)"
 
+# Rust Cargo
+export PATH="$HOME/.cargo/bin:$PATH"

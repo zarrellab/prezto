@@ -24,6 +24,9 @@ alias www='git checkout stage && git pull upstream stage && npm i && bundle'
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
+# rustup Autocomplete
+fpath+=~/.zfunc
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
 
