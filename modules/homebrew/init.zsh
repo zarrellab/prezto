@@ -29,7 +29,7 @@ fi
 #
 
 # Homebrew
-alias brewU='brew update && brew upgrade && cask upgrade && brew cleanup'
+alias brewU='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 alias brewc='brew cleanup'
 alias brewi='brew install'
 alias brewL='brew leaves'
