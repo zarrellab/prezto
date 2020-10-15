@@ -5,8 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Load dependencies.
+pmodload 'helper'
+
 # Return if requirements are not found.
-if [[ "$OSTYPE" != (darwin|linux)* ]]; then
+if ! is-darwin && ! is-linux; then
   return 1
 fi
 
@@ -14,10 +17,12 @@ fi
 # Variables
 #
 
-# Load standard 'HOMEBREW_' prefixed variables.
-export HOMEBREW_PREFIX="/usr/local"
-export HOMEBREW_CELLAR="/usr/local/Cellar"
-export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
+# Load standard Homebrew shellenv into the shell session.
+# Load 'HOMEBREW_' prefixed variables only. Avoid loading 'PATH' related
+# variables as they are already handled in standard zsh configuration.
+if (( $+commands[brew] )); then
+  eval "${(@M)${(f)"$(brew shellenv 2> /dev/null)"}:#export HOMEBREW*}"
+fi
 
 #
 # Aliases
@@ -26,8 +31,8 @@ export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
 # Homebrew
 alias brewU='brew update && brew upgrade && cask upgrade && brew cleanup'
 alias brewc='brew cleanup'
-alias brewC='brew cleanup --force'
 alias brewi='brew install'
+alias brewL='brew leaves'
 alias brewl='brew list'
 alias brewo='brew outdated'
 alias brews='brew search'
