@@ -65,3 +65,8 @@ tags
 .vscode/
 .vs/
 
+# Scala
+.bloop/
+.metals/
+project/project/
+project/metals.sbt
