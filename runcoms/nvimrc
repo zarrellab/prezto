@@ -9,5 +9,4 @@ Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-" base16 colors
-colorscheme base16-spacemacs
+source ~/.config/nvim/colorscheme.vim
