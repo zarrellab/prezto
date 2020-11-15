@@ -23,12 +23,6 @@ version is 4.3.11.
      source ~/.zprezto/scripts/init-brew.sh
      ```
 
-  1. Run the zsh initialization script:
-
-     ```console
-     source ~/.zprezto/scripts/init-zsh.sh
-     ```
-
   1. Run the zprezto initialization script:
 
      ```console

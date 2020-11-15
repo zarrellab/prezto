@@ -22,3 +22,6 @@ ln -s $HOME/.zprezto/modules/zsh/base16-iterm2 $HOME/base16-iterm2
 
 echo 'ensuring module updates...'
 zprezto-update
+
+echo 'setting zsh as default user shell...'
+chsh -s /usr/local/bin/zsh
