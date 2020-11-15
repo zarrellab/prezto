@@ -22,3 +22,4 @@ npm i -g neovim
 
 # Set java in jenv
 jenv add /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+jenv global 15
