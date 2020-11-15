@@ -5,6 +5,17 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+### PATH ###
+# Init PATH
+export PATH="/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+# Homebrew
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# Homebrew curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+# Rust Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+### PATH ###
+
 #
 # Browser
 #
@@ -64,6 +75,3 @@ fi
 
 # Java Version Manager
 eval "$(jenv init -)"
-
-# Rust Cargo
-export PATH="$HOME/.cargo/bin:$PATH"

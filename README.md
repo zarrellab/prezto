@@ -1,62 +1,55 @@
-Prezto — Instantly Awesome Zsh
-==============================
+# Prezto — Instantly Awesome Zsh
+
 Brandon's personal config, forked from Prezto
 
 Prezto is the configuration framework for [Zsh][1]; it enriches the command line
 interface environment with sane defaults, aliases, functions, auto completion,
 and prompt themes.
 
-Installation
-------------
+## Installation
 
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.11.
 
-  1. Launch Zsh:
-
-     ```console
-     zsh
-     ```
-
-  2. Clone the repository:
+  1. Clone the repository:
 
      ```console
      git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
      ```
 
-  3. Create a new Zsh configuration by copying the Zsh configuration files
-     provided:
-
-     ```sh
-     setopt EXTENDED_GLOB
-     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-     done
-     ```
-
-     Note: If you already have any of the given configuration files, `ln` will
-     cause error. In simple cases you can load prezto by adding the line
-     `source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"` to the bottom of your
-     `.zshrc` and keep the rest of your Zsh configuration intact. For more
-     complicated setups, it is recommended that you back up your original
-     configs and replace them with the provided prezto runcoms.
-
-  4. Set homebrew installed Zsh as your default shell:
+  1. Run the homebrew initialization script:
 
      ```console
-     chsh -s /usr/local/bin/zsh
+     source ~/.zprezto/scripts/init-brew.sh
      ```
 
-  5. Open a new Zsh terminal window or tab.
+  1. Run the zsh initialization script:
 
-### Troubleshooting
+     ```console
+     source ~/.zprezto/scripts/init-zsh.sh
+     ```
+
+  1. Run the zprezto initialization script:
+
+     ```console
+     source ~/.zprezto/scripts/init-zprezto.zsh
+     ```
+
+  1. (Optional) Run the recommended apps script:
+
+     ```console
+     source ~/.zprezto/scripts/recommended-apps.zsh
+     ```
+
+  1. Create `~/.zshprivate` file to store private enviroment variables
+
+## Troubleshooting
 
 If you are not able to find certain commands after switching to *Prezto*,
 modify the `PATH` variable in *~/.zprofile* then open a new Zsh terminal
 window or tab.
 
-Updating
---------
+## Updating
 
 Run `zprezto-update` to automatically check if there is an update to zprezto.
 If there are no file conflicts, zprezto and its submodules will be
@@ -71,23 +64,22 @@ git pull
 git submodule update --init --recursive
 ```
 
-Usage
------
+## Usage
 
 Prezto has many features disabled by default. Read the source code and
 accompanying README files to learn of what is available.
 
-### Modules
+## Modules
 
   1. Browse */modules* to see what is available.
-  2. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
+  1. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
      window or tab.
 
-### Themes
+## Themes
 
   1. For a list of themes, type `prompt -l`.
-  2. To preview a theme, type `prompt -p name`.
-  3. Load the theme you like in *~/.zpreztorc* then open a new Zsh terminal
+  1. To preview a theme, type `prompt -p name`.
+  1. Load the theme you like in *~/.zpreztorc* then open a new Zsh terminal
      window or tab.
 
      ![sorin theme][2]
@@ -96,10 +88,10 @@ accompanying README files to learn of what is available.
      list (under `zstyle ':prezto:load' pmodule \` in your *~/.zpreztorc*) to
      enable this module.
 
-### External Modules
+## External Modules
 
   1. By default modules will be loaded from */modules* and */contrib*.
-  2. Additional module directories can be added to the
+  1. Additional module directories can be added to the
      `:prezto:load:pmodule-dirs` setting in *~/.zpreztorc*.
 
      Note that module names need to be unique or they will cause an error when
@@ -109,21 +101,18 @@ accompanying README files to learn of what is available.
      zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
      ```
 
-Customization
--------------
+## Customization
 
 The project is managed via [Git][3]. It is highly recommended that you fork this
 project; so, that you can commit your changes and push them to [GitHub][4] to
 not lose them. If you do not know how to use Git, follow this [tutorial][5] and
 bookmark this [reference][6].
 
-Resources
----------
+## Resources
 
 The [Zsh Reference Card][7] and the [zsh-lovers][8] man page are indispensable.
 
-License
--------
+## License
 
 This project is licensed under the MIT License.
 
