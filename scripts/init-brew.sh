@@ -9,6 +9,10 @@ echo 'installing homebrew...'
 echo 'installing necassary apps...'
 brew update
 
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap chrokh/tap
+
 brew install base16-manager
 brew install fasd
 brew install font-sauce-code-pro-nerd-font
