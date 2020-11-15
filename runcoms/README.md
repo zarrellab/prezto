@@ -1,5 +1,4 @@
-Configuration Files
-===================
+# Configuration Files
 
 Zsh has several system-wide and user-local configuration files.
 
@@ -13,8 +12,7 @@ but are prefixed with a dot (hidden). Zsh looks for these files in the path
 stored in the `$ZDOTDIR` environment variable. However, if said variable is
 not defined, Zsh will use the user's home directory.
 
-File Descriptions
------------------
+## Zsh File Order
 
 The configuration files are read in the following order:
 
@@ -29,6 +27,8 @@ The configuration files are read in the following order:
   09. ~/.zlogin
   10. ~/.zlogout
   11. /etc/zlogout
+
+## File Descriptions
 
 ### zshenv
 
@@ -66,14 +66,23 @@ bindings. It should not change the shell environment.
 This file is sourced by login shells during logout. It should be used for
 displaying messages and the deletion of files.
 
-Authors
--------
+### phoenix.js
+
+This file configures the osx window manager, [Phoenix][5].
+
+### fzf.zsh
+
+This file initializes [fzf][6] keybindings and completions.
+
+## Authors
 
 *The authors of these files should be contacted via the [issue tracker][4].*
 
-  - [Sorin Ionescu](https://github.com/sorin-ionescu)
+- [Sorin Ionescu](https://github.com/sorin-ionescu)
 
 [1]: http://www.kornshell.com
 [2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
 [3]: http://www.manpagez.com/man/1/msgs
 [4]: https://github.com/sorin-ionescu/prezto/issues
+[5]: https://github.com/kasper/phoenix
+[6]: https://github.com/junegunn/fzf
