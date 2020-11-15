@@ -32,7 +32,6 @@ brew install openjdk@8
 brew install pigz
 brew install pipenv
 brew install postman
-brew install python
 brew install quicklook-csv
 brew install quicklook-json
 brew install ripgrep

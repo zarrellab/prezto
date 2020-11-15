@@ -2,6 +2,8 @@ set background=dark
 let base16colorspace=256
 set termguicolors
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
