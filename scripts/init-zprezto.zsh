@@ -1,7 +1,7 @@
 # Initializes what's needed for the Prezto setup
 # Requires packages installed via init-brew.zsh
 
-echo 'creating config files...'
+echo 'linking config files...'
 echo 'NOTE: if you already have any of the given configuration files, this will move them to backup location'
 setopt EXTENDED_GLOB
 
@@ -14,7 +14,11 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     mv $HOME/.${rcfile:t} $backup_dir
   fi
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  echo "${rcfile:t} successfully linked"
 done
+
+echo 'linking iterm2 colors...'
+ln -s $HOME/.zprezto/modules/zsh/base16-iterm2 $HOME/base16-iterm2
 
 echo 'ensuring module updates...'
 zprezto-update

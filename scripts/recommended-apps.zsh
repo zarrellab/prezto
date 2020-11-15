@@ -57,3 +57,4 @@ mas lucky amphetamine
 
 echo 'installing related utils...'
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | zsh
+base16-manager install nicodebo/base16-fzf

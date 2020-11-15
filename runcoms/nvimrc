@@ -1,0 +1,13 @@
+set background=dark
+let base16colorspace=256
+set termguicolors
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'chriskempson/base16-vim'
+
+call plug#end()
+
+" base16 colors
+colorscheme base16-spacemacs

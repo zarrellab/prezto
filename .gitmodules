@@ -26,3 +26,6 @@
 	path = modules/zsh/znvm
 	url = git@github.com:zarrellab/.znvm.git
 	branch = master
+[submodule "modules/zsh/base16-iterm2"]
+	path = modules/zsh/base16-iterm2
+	url = git@github.com:chriskempson/base16-iterm2.git

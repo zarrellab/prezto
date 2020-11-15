@@ -41,6 +41,16 @@ version is 4.3.11.
      source ~/.zprezto/scripts/recommended-apps.zsh
      ```
 
+  1. (Optional) Set iterm2 colors:
+
+     1. Open iterm2
+     1. Go to Preferences > Profiles > Colors
+     1. Click on the "Color Presets..." dropdown
+     1. Select "Import..."
+     1. Select Your home folder > base16-iterm2 > Choose a color theme with 256
+     1. Click on the "Color Presets..." dropdown again
+     1. Select your imported colorscheme
+
   1. Create `~/.zshprivate` file to store private enviroment variables
 
 ## Troubleshooting
