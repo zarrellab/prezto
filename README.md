@@ -35,6 +35,8 @@ version is 4.3.11.
      source ~/.zprezto/scripts/init-utils.zsh
      ```
 
+  1. Create `~/.zshprivate` file to store private enviroment variables
+
   1. Close terminal and open iterm2
 
   1. (Optional) Run the recommended apps script:
@@ -52,8 +54,6 @@ version is 4.3.11.
      1. Select Your home folder > base16-iterm2 > Choose a color theme with 256
      1. Click on the "Color Presets..." dropdown again
      1. Select your imported colorscheme
-
-  1. Create `~/.zshprivate` file to store private enviroment variables
 
 ## Troubleshooting
 
