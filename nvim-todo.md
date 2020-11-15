@@ -2,6 +2,10 @@
 
 ## Needs
 
+- [ ] Fuzzy finder
+  - [ ] Files
+  - [ ] Commands
+  - [ ] Text Search
 - [ ] Auto-close HTML tags - <https://vimawesome.com/plugin/surround-vim>
 - [ ] Auto-close JSX tags - <https://vimawesome.com/plugin/surround-vim>
 - [ ] Auto-close other - <https://vimawesome.com/plugin/surround-vim>
@@ -32,11 +36,11 @@
   - [ ] JSON
   - [ ] Markdown
   - [ ] Pylint
-  - [ ] Scala
+  - [ ] Scalalint
   - [ ] YAMLlint
   - [ ] TOMLlint
-  - [ ] Jinja
-  - [ ] Autofix
+  - [ ] Autofix on save
+- [ ] Prettier
 - [ ] Syntax
   - [ ] TS
   - [ ] JS
@@ -45,6 +49,7 @@
   - [ ] HTML
   - [ ] CSS
   - [ ] SASS/SCSS
+  - [ ] Java
   - [ ] JSON
   - [ ] Markdown
   - [ ] Gitignore
@@ -53,9 +58,9 @@
   - [ ] Python
   - [ ] Scala
   - [ ] Shell
+  - [ ] Rust
   - [ ] YAML
   - [ ] TOML
-  - [ ] Jinja
   - [ ] Variable highlighting
   - [ ] TODO/FIXME highlighting - <https://vimawesome.com/plugin/todo-vim-all-too-well>
   - [ ] Color hex/variable highlighting
@@ -77,7 +82,8 @@
   - [ ] Paths
   - [ ] Python
   - [ ] Scalastyle
-  - [ ] Jinja
+  - [ ] Java
+  - [ ] Rust
   - [ ] Buffer
 - [ ] Docs in completion
   - [ ] TS
@@ -88,6 +94,8 @@
   - [ ] SASS/SCSS
   - [ ] Python
   - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
 - [ ] Snippets
   - [ ] Snippet manager/repo - <https://vimawesome.com/plugin/vim-snippets>
   - [ ] TS
@@ -98,31 +106,33 @@
   - [ ] CSS
   - [ ] SASS/SCSS
   - [ ] React
-  - [ ] Hyperapp
   - [ ] Webpack
   - [ ] Python
-  - [ ] Django
-  - [ ] Flask
   - [ ] Node
   - [ ] Play
   - [ ] Jest
-  - [ ] Jinja
   - [ ] Redux
   - [ ] Proptypes
+  - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
 - [ ] Debuggers
-  - [ ] Chrome
+  - [ ] Firefox
   - [ ] Jest
   - [ ] Python
   - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
 
 ## Nice to Have
 
 - [ ] Test runners - <https://vimawesome.com/plugin/vim-test-all-too-well>
+  - [ ] Wallaby.js
   - [ ] Jest
   - [ ] Unittest
-  - [ ] Django
   - [ ] Pytest
   - [ ] SBTtest
+  - [ ] Rust
 - [ ] Import cost
 - [ ] CSS spy class completion (HTML/JS/TS)
 - [ ] Version lens for package.json
@@ -132,11 +142,14 @@
 - [ ] NPM link status
 - [ ] TODO list
 - [ ] Color picker
-- [ ] Webpack progress
+- [ ] Compile progress
+  - [ ] Webpack
+  - [ ] Java
+  - [ ] Scala
+  - [ ] Rust
 - [ ] Findall/grep interface
 - [ ] CSS browser compatibility in docs
 - [ ] JS browser compatibility in docs
-- [ ] Tomatimer
 - [ ] Detect tab length
 - [ ] Sidebar icons - <https://vimawesome.com/plugin/vim-devicons>
 - [ ] Markdown preview - <https://github.com/vimlab/mdn.vim>
@@ -146,3 +159,5 @@
 - [ ] Spellcheck (especially in git commit message)
 - [ ] Symbol outline tree
 - [ ] Expand current file in NERDtree
+- [ ] Sort lines
+- [ ] Sort JSON
