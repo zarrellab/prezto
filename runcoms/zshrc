@@ -7,9 +7,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Autojump for fast filesystem navigation
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
 # Aliases
 alias v=$EDITOR
 alias shelltime='for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done'
@@ -40,3 +37,6 @@ commit () {
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Fuzzy finder commands
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
