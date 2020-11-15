@@ -11,6 +11,12 @@ and prompt themes.
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.11.
 
+  1. Install mac developer tools
+
+     ```console
+     xcode-select --install
+     ```
+
   1. Clone the repository:
 
      ```console

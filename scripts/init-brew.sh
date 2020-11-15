@@ -1,8 +1,5 @@
 # Installs homebrew and necessary packages
 
-echo 'installing xcode tools...'
-xcode-select --install
-
 echo 'installing homebrew...'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
