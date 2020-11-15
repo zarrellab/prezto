@@ -13,7 +13,7 @@ base16-manager set spacemacs
 
 # Node in node version manager
 nvm
-nvm install lts
+nvm install --lts
 npm i -g npm
 
 # Neovim utils
