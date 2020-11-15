@@ -4,6 +4,8 @@
 echo 'installing recommended brew apps...'
 brew update
 
+brew tap homebrew/cask-drivers
+
 brew cask install docker-edge
 
 brew install 1password
@@ -21,6 +23,7 @@ brew install gnupg
 brew install google-chrome
 brew install htop
 brew install iterm2
+brew install logitech-options
 brew install mas
 brew install microsoft-edge
 brew install miro
