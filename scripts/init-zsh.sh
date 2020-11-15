@@ -3,6 +3,3 @@
 
 echo 'setting zsh as default user shell...'
 chsh -s /usr/local/bin/zsh
-
-echo 'activating zsh...'
-zsh

@@ -41,6 +41,8 @@ version is 4.3.11.
      source ~/.zprezto/scripts/init-utils.zsh
      ```
 
+  1. Close terminal and open iterm2
+
   1. (Optional) Run the recommended apps script:
 
      ```console
