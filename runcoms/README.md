@@ -66,13 +66,17 @@ bindings. It should not change the shell environment.
 This file is sourced by login shells during logout. It should be used for
 displaying messages and the deletion of files.
 
+### nvim.rc
+
+This file configures [neovim][5]
+
 ### phoenix.js
 
-This file configures the osx window manager, [Phoenix][5].
+This file configures the osx window manager, [Phoenix][6].
 
 ### fzf.zsh
 
-This file initializes [fzf][6] keybindings and completions.
+This file initializes [fzf][7] keybindings and completions.
 
 ## Authors
 
@@ -84,5 +88,6 @@ This file initializes [fzf][6] keybindings and completions.
 [2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
 [3]: http://www.manpagez.com/man/1/msgs
 [4]: https://github.com/sorin-ionescu/prezto/issues
-[5]: https://github.com/kasper/phoenix
-[6]: https://github.com/junegunn/fzf
+[5]: https://neovim.io/
+[6]: https://github.com/kasper/phoenix
+[7]: https://github.com/junegunn/fzf
