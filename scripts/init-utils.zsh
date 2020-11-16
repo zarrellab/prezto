@@ -23,3 +23,5 @@ npm i -g neovim
 # Set java in jenv
 jenv add /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 jenv global 15
+jenv enable-plugin maven
+jenv enable-plugin export
