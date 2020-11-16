@@ -35,9 +35,7 @@ version is 4.3.11.
      source ~/.zprezto/scripts/init-zprezto.zsh
      ```
 
-  1. Create `~/.zshprivate` file to store private enviroment variables
-
-  1. Close terminal and open iterm2
+  1. Iterm2 should've opened. You should move there now and quit terminal.
 
   1. Run the util initialization script:
 

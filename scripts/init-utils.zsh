@@ -26,3 +26,9 @@ jenv global 15
 jenv enable-plugin maven
 jenv enable-plugin export
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+# Create private env file
+touch ~/.zshprivate
+
+# Open Docker
+open /Applications/Docker.app
