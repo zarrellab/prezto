@@ -25,3 +25,4 @@ jenv add /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 jenv global 15
 jenv enable-plugin maven
 jenv enable-plugin export
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk

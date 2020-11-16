@@ -35,8 +35,5 @@ commit () {
   git commit -m "$(detect_git_branch) - $1"
 }
 
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # Fuzzy finder commands
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

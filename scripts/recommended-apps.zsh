@@ -61,4 +61,6 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 base16-manager install nicodebo/base16-fzf
 # Jenv add new versions
 jenv add /usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk@11 /Library/Java/JavaVirtualMachines/openjdk-11.jdk
 jenv add /usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk@8 /Library/Java/JavaVirtualMachines/openjdk-8.jdk
