@@ -6,8 +6,6 @@ brew update
 
 brew tap homebrew/cask-drivers
 
-brew cask install docker-edge
-
 brew install 1password
 brew install 1password-cli
 brew install awscli

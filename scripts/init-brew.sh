@@ -11,12 +11,13 @@ brew tap homebrew/cask-fonts
 brew tap chrokh/tap
 
 brew install base16-manager
+brew install docker-edge
 brew install fasd
 brew install font-sauce-code-pro-nerd-font
 brew install git
 brew install htop
-brew install jenv
 brew install iterm2
+brew install jenv
 brew install neovim
 brew install nvm
 brew install openjdk
