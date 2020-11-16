@@ -55,5 +55,10 @@ echo 'NOTE: you may need to sign into app store first'
 mas lucky amphetamine
 
 echo 'installing related utils...'
+# iterm shell integration
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | zsh
+# base16 for fzf
 base16-manager install nicodebo/base16-fzf
+# Jenv add new versions
+jenv add /usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
+jenv add /usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home
