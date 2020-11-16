@@ -35,15 +35,15 @@ version is 4.3.11.
      source ~/.zprezto/scripts/init-zprezto.zsh
      ```
 
+  1. Create `~/.zshprivate` file to store private enviroment variables
+
+  1. Close terminal and open iterm2
+
   1. Run the util initialization script:
 
      ```console
      source ~/.zprezto/scripts/init-utils.zsh
      ```
-
-  1. Create `~/.zshprivate` file to store private enviroment variables
-
-  1. Close terminal and open iterm2
 
   1. (Optional) Run the recommended apps script:
 
