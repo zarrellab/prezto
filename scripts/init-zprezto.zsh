@@ -27,4 +27,4 @@ echo 'setting zsh as default user shell...'
 chsh -s /usr/local/bin/zsh
 
 echo 'opening iterm...'
-/Applications/iTerm.app
+open /Applications/iTerm.app
