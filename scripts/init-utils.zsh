@@ -51,4 +51,5 @@ echo '============================'
 echo 'Here is your git config:'
 git config --list
 
+echo 'Login to Docker:'
 docker login
