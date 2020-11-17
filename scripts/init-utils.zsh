@@ -32,3 +32,20 @@ touch ~/.zshprivate
 
 # Open Docker
 open /Applications/Docker.app
+
+echo 'Setting up git...'
+
+echo 'Enter your full name:'
+read name
+
+echo 'Enter your email:'
+read email
+
+git config --global user.name $name
+git config --global user.email $email
+git config --global core.editor nvim
+git config --global init.defaultBranch main
+
+echo '============================'
+echo 'Here is your git config:'
+git config --list
