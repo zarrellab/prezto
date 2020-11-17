@@ -4,7 +4,7 @@ local NVIM_INIT="${HOME}/.config/nvim/init.vim"
 if [ ! -f $NVIM_INIT ]; then
   echo "creating init.vim..."
   mkdir $HOME/.config/nvim
-  echo 'source /Users/bzarrella/.nvimrc' > $NVIM_INIT
+  echo 'source $HOME/.nvimrc' > $NVIM_INIT
 fi
 
 if [ ! -f $NVIM_INIT ]; then
