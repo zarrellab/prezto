@@ -5,6 +5,17 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Init PATH
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:"
+# Ruby
+export PATH="/home/bz/.gem/ruby/2.5.0/bin:"
+# Windows
+export PATH="/mnt/c/Users/zarre/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Windows/System32:/usr/local/bin"
+# Rust Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+# Java
+export PATH="$HOME/.jenv/bin:$PATH"
+
 #
 # Browser
 #
@@ -64,4 +75,3 @@ fi
 
 # Java Version Manager
 eval "$(jenv init -)"
-
