@@ -34,3 +34,6 @@ commit () {
   git commit -m "$(detect_git_branch) - $1"
 }
 
+# Display for apps running in WSL2
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+sudo /etc/init.d/dbus start &> /dev/null
