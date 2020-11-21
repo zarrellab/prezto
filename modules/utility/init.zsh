@@ -11,7 +11,9 @@
 pmodload 'helper' 'spectrum'
 
 # Correct commands.
-setopt CORRECT
+if zstyle -T ':prezto:module:utility' correct; then
+  setopt CORRECT
+fi
 
 #
 # Aliases
@@ -64,16 +66,19 @@ alias mvi="${aliases[mv]:-mv} -i"
 alias cpi="${aliases[cp]:-cp} -i"
 alias lni="${aliases[ln]:-ln} -i"
 if zstyle -T ':prezto:module:utility' safe-ops; then
-  alias rm='rmi'
-  alias mv='mvi'
-  alias cp='cpi'
-  alias ln='lni'
+  alias rm="${aliases[rm]:-rm} -i"
+  alias mv="${aliases[mv]:-mv} -i"
+  alias cp="${aliases[cp]:-cp} -i"
+  alias ln="${aliases[ln]:-ln} -i"
 fi
 
 # ls
 if is-callable 'dircolors'; then
   # GNU Core Utilities
-  alias ls='ls --group-directories-first'
+
+  if zstyle -T ':prezto:module:utility:ls' dirs-first; then
+    alias ls="${aliases[ls]:-ls} --group-directories-first"
+  fi
 
   if zstyle -t ':prezto:module:utility:ls' color; then
     # Call dircolors to define colors if they're missing
@@ -129,12 +134,16 @@ if zstyle -t ':prezto:module:utility:grep' color; then
 fi
 
 # macOS Everywhere
-if [[ "$OSTYPE" == darwin* ]]; then
+if is-darwin; then
   alias o='open'
-elif [[ "$OSTYPE" == cygwin* ]]; then
+elif is-cygwin; then
   alias o='cygstart'
   alias pbcopy='tee > /dev/clipboard'
   alias pbpaste='cat /dev/clipboard'
+elif is-termux; then
+  alias o='termux-open'
+  alias pbcopy='termux-clipboard-set'
+  alias pbpaste='termux-clipboard-get'
 else
   alias o='xdg-open'
 
@@ -161,13 +170,13 @@ fi
 alias df='df -kh'
 alias du='du -kh'
 
-# if [[ "$OSTYPE" == (darwin*|*bsd*) ]]; then
-#   alias topc='htop -o cpu'
-#   alias topm='htop -o vsize'
-# else
-#   alias topc='htop -o %CPU'
-#   alias topm='htop -o %MEM'
-# fi
+if is-darwin || is-bsd; then
+  alias topc='top -o cpu'
+  alias topm='top -o vsize'
+else
+  alias topc='top -o %CPU'
+  alias topm='top -o %MEM'
+fi
 
 # Miscellaneous
 

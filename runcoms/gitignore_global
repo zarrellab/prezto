@@ -95,3 +95,8 @@ tags
 # Local History for Visual Studio Code
 .history/
 
+# Scala
+.bloop/
+.metals/
+project/project/
+project/metals.sbt

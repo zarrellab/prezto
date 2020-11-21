@@ -1,65 +1,75 @@
-Prezto — Instantly Awesome Zsh
-==============================
+# Prezto — Instantly Awesome Zsh
+
 Brandon's personal config, forked from Prezto
 
 Prezto is the configuration framework for [Zsh][1]; it enriches the command line
 interface environment with sane defaults, aliases, functions, auto completion,
 and prompt themes.
 
-Installation
-------------
+## Installation
 
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.11.
 
-  1. Launch Zsh:
+  1. Install mac developer tools
 
      ```console
-     zsh
+     xcode-select --install
      ```
 
-  2. Clone the repository:
+  1. Clone the repository:
 
      ```console
      git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
      ```
 
-  3. Create a new Zsh configuration by copying the Zsh configuration files
-     provided:
-
-     ```sh
-     setopt EXTENDED_GLOB
-     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-     done
-     ```
-
-     Note: If you already have any of the given config files, ln will error. In
-     simple cases you can add `source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"` to
-     the bottom of your `.zshrc` to load prezto but keep your config intact. For
-     more complicated setups, it is recommended that you back up your original
-     configs and replace them with the provided prezto runcoms.
-
-  4. Set homebrew installed Zsh as your default shell:
+  1. Run the homebrew initialization script:
 
      ```console
-     chsh -s /usr/local/bin/zsh
+     source ~/.zprezto/scripts/init-brew.sh
      ```
 
-  5. Open a new Zsh terminal window or tab.
+  1. Run the zprezto initialization script:
 
-### Troubleshooting
+     ```console
+     source ~/.zprezto/scripts/init-zprezto.zsh
+     ```
+
+  1. Iterm2 should've opened. You should move there now and quit terminal.
+
+  1. Run the util initialization script:
+
+     ```console
+     source ~/.zprezto/scripts/init-utils.zsh
+     ```
+
+  1. (Optional) Run the recommended apps script:
+
+     ```console
+     source ~/.zprezto/scripts/recommended-apps.zsh
+     ```
+
+  1. (Optional) Set iterm2 colors:
+
+     1. Open iterm2
+     1. Go to Preferences > Profiles > Colors
+     1. Click on the "Color Presets..." dropdown
+     1. Select "Import..."
+     1. Select Your home folder > base16-iterm2 > Choose a color theme with 256
+     1. Click on the "Color Presets..." dropdown again
+     1. Select your imported colorscheme
+
+## Troubleshooting
 
 If you are not able to find certain commands after switching to *Prezto*,
 modify the `PATH` variable in *~/.zprofile* then open a new Zsh terminal
 window or tab.
 
-Updating
---------
+## Updating
 
 Run `zprezto-update` to automatically check if there is an update to zprezto.
 If there are no file conflicts, zprezto and its submodules will be
-automatically updated. If there are conflicts you will instructed to go into
+automatically updated. If there are conflicts you will be instructed to go into
 the `$ZPREZTODIR` directory and resolve them yourself.
 
 To pull the latest changes and update submodules manually:
@@ -70,55 +80,55 @@ git pull
 git submodule update --init --recursive
 ```
 
-Usage
------
+## Usage
 
 Prezto has many features disabled by default. Read the source code and
 accompanying README files to learn of what is available.
 
-### Modules
+## Modules
 
   1. Browse */modules* to see what is available.
-  2. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
+  1. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
      window or tab.
 
-### Themes
+## Themes
 
   1. For a list of themes, type `prompt -l`.
-  2. To preview a theme, type `prompt -p name`.
-  3. Load the theme you like in *~/.zpreztorc* then open a new Zsh terminal
+  1. To preview a theme, type `prompt -p name`.
+  1. Load the theme you like in *~/.zpreztorc* then open a new Zsh terminal
      window or tab.
 
      ![sorin theme][2]
+     Note that the 'git' module may be required for special symbols to appear,
+     such as those on the right of the above image. Add `'git'` to the `pmodule`
+     list (under `zstyle ':prezto:load' pmodule \` in your *~/.zpreztorc*) to
+     enable this module.
 
-### External Modules
+## External Modules
 
   1. By default modules will be loaded from */modules* and */contrib*.
-  2. Additional module directories can be added to the
+  1. Additional module directories can be added to the
      `:prezto:load:pmodule-dirs` setting in *~/.zpreztorc*.
 
      Note that module names need to be unique or they will cause an error when
      loading.
 
-     ```console
+     ```sh
      zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
      ```
 
-Customization
--------------
+## Customization
 
 The project is managed via [Git][3]. It is highly recommended that you fork this
 project; so, that you can commit your changes and push them to [GitHub][4] to
 not lose them. If you do not know how to use Git, follow this [tutorial][5] and
 bookmark this [reference][6].
 
-Resources
----------
+## Resources
 
 The [Zsh Reference Card][7] and the [zsh-lovers][8] man page are indispensable.
 
-License
--------
+## License
 
 This project is licensed under the MIT License.
 
@@ -127,6 +137,6 @@ This project is licensed under the MIT License.
 [3]: http://git-scm.com
 [4]: https://github.com
 [5]: http://gitimmersion.com
-[6]: http://gitref.org
+[6]: https://git.github.io/git-reference/
 [7]: http://www.bash2zsh.com/zsh_refcard/refcard.pdf
 [8]: http://grml.org/zsh/zsh-lovers.html

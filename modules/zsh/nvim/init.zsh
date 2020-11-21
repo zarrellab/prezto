@@ -2,8 +2,9 @@
 local NVIM_INIT="${HOME}/.config/nvim/init.vim"
 
 if [ ! -f $NVIM_INIT ]; then
-  echo "configuring nvim..."
-  echo 'source ~/.nvimrc' > $NVIM_INIT
+  echo "creating init.vim..."
+  mkdir $HOME/.config/nvim
+  echo "source $HOME/.nvimrc" > $NVIM_INIT
 fi
 
 ## ensure vim-plug

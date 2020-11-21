@@ -10,7 +10,8 @@ nvm
 [nvm][5] allows for managing multiple, isolated Node.js installations in the
 home directory.
 
-install via homebrew
+This will be loaded automatically if nvm is installed in `$NVM_DIR`,
+`~/.nvm`, or nvm is installed with homebrew.
 
 nodenv
 ------
@@ -19,12 +20,15 @@ nodenv
 Node versions. It's simple and predictable, Just Works, and is rock solid in
 production. nodenv is forked from the popular [rbenv][7].
 
+This will be loaded automatically if nodenv is installed in `$NODENV_ROOT`,
+`~/.nodenv`, or `nodenv` is on the path.
+
 Functions
 ---------
 
-  - `node-doc` opens the Node.js online [API documentation][3] in the default
+- `node-doc` opens the Node.js online [API documentation][3] in the default
     browser.
-  - `node-info` exposes information about the Node.js environment via the
+- `node-info` exposes information about the Node.js environment via the
     `$node_info` associative array.
 
 Theming
@@ -46,8 +50,8 @@ Authors
 
 *The authors of this module should be contacted via the [issue tracker][4].*
 
-  - [Sorin Ionescu](https://github.com/sorin-ionescu)
-  - [Zeh Rizzatti](https://github.com/zehrizzatti)
+- [Sorin Ionescu](https://github.com/sorin-ionescu)
+- [Zeh Rizzatti](https://github.com/zehrizzatti)
 
 [1]: http://nodejs.org
 [2]: http://npmjs.org

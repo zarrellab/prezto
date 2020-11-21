@@ -7,9 +7,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Autojump for fast filesystem navigation
-[ -f /usr/etc/profile.d/autojump.sh ] && . /usr/etc/profile.d/autojump.sh
-
 # Aliases
 alias v='nvim'
 alias shelltime='for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done'
@@ -23,6 +20,9 @@ alias www='git checkout stage && git pull upstream stage && npm i && bundle'
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
+# rustup Autocomplete
+fpath+=~/.zfunc
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
 
@@ -34,6 +34,5 @@ commit () {
   git commit -m "$(detect_git_branch) - $1"
 }
 
-# Display for apps running in WSL2
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-sudo /etc/init.d/dbus start &> /dev/null
+# Fuzzy finder commands
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

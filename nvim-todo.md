@@ -1,0 +1,163 @@
+# NVIMRC TODO
+
+## Needs
+
+- [ ] Fuzzy finder
+  - [ ] Files
+  - [ ] Commands
+  - [ ] Text Search
+- [ ] Auto-close HTML tags - <https://vimawesome.com/plugin/surround-vim>
+- [ ] Auto-close JSX tags - <https://vimawesome.com/plugin/surround-vim>
+- [ ] Auto-close other - <https://vimawesome.com/plugin/surround-vim>
+- [ ] Quote swap - <https://vimawesome.com/plugin/surround-vim>
+- [ ] HTML tag swap - <https://vimawesome.com/plugin/surround-vim>
+- [ ] JSX tag swap - <https://vimawesome.com/plugin/surround-vim>
+- [ ] Clock - <https://vimawesome.com/plugin/vim-airline-clock>
+- [ ] New file with path and name
+  - [ ] File skeletons - <https://vimawesome.com/plugin/vim-skeleton>
+  - [ ] Rename - <https://vimawesome.com/plugin/rename-vim-the-lucky-one>
+- [ ] Sort lines - <http://vim.wikia.com/wiki/Sort_lines>
+- [ ] Sort JSON - <https://vimawesome.com/plugin/jdaddy-vim>
+- [ ] Comment lines - <https://vimawesome.com/plugin/the-nerd-commenter>
+  - [ ] Configure
+- [ ] Create snippets
+  - [ ] Maybe - <https://vimawesome.com/plugin/vim-snippets>
+  - [ ] Maybe - <https://vimawesome.com/plugin/ultisnips>
+- [ ] Keep gutter open. No jumps
+- [ ] No flash when scrolling
+- [ ] Fix gitgutter. It’s not updating sometimes
+- [ ] Git status in tree
+- [ ] Customize status bar
+  - [ ] No file encoding
+- [ ] Linters
+  - [ ] TSlint
+  - [ ] ESlint
+  - [ ] Stylelint
+  - [ ] JSON
+  - [ ] Markdown
+  - [ ] Pylint
+  - [ ] Scalalint
+  - [ ] YAMLlint
+  - [ ] TOMLlint
+  - [ ] Autofix on save
+- [ ] Prettier
+- [ ] Syntax
+  - [ ] TS
+  - [ ] JS
+  - [ ] JSX (.jsx/.tsx) - <https://vimawesome.com/plugin/vim-jsx-pretty>
+    - [ ] End tag same color
+  - [ ] HTML
+  - [ ] CSS
+  - [ ] SASS/SCSS
+  - [ ] Java
+  - [ ] JSON
+  - [ ] Markdown
+  - [ ] Gitignore
+  - [ ] Dockerfile
+  - [ ] Dotenv
+  - [ ] Python
+  - [ ] Scala
+  - [ ] Shell
+  - [ ] Rust
+  - [ ] YAML
+  - [ ] TOML
+  - [ ] Variable highlighting
+  - [ ] TODO/FIXME highlighting - <https://vimawesome.com/plugin/todo-vim-all-too-well>
+  - [ ] Color hex/variable highlighting
+    - [ ] Hex & variable - <https://vimawesome.com/plugin/vim-sass-colors>
+    - [ ] Hex - <https://vimawesome.com/plugin/colorizer>
+- [ ] Completion
+  - [ ] Maybe use NCM2 for completion, over deoplete - <https://github.com/ncm2/ncm2>
+  - [ ] parameter expansion
+  - [ ] props expansion
+  - [ ] Default to enter, not arrows first - <https://vi.stackexchange.com/questions/15401/is-it-possible-to-put-the-cursor-on-the-first-item-on-auto-completion>
+  - [ ] Docs in completion - <https://vimawesome.com/plugin/echodoc>
+  - [ ] TS
+  - [ ] JS
+  - [ ] JSX (.jsx/.tsx)
+  - [ ] HTML
+  - [ ] CSS
+  - [ ] SASS/SCSS
+  - [ ] Imports
+  - [ ] Paths
+  - [ ] Python
+  - [ ] Scalastyle
+  - [ ] Java
+  - [ ] Rust
+  - [ ] Buffer
+- [ ] Docs in completion
+  - [ ] TS
+  - [ ] JS
+  - [ ] JSDoc
+  - [ ] HTML
+  - [ ] CSS
+  - [ ] SASS/SCSS
+  - [ ] Python
+  - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
+- [ ] Snippets
+  - [ ] Snippet manager/repo - <https://vimawesome.com/plugin/vim-snippets>
+  - [ ] TS
+  - [ ] JS
+  - [ ] JSDoc
+  - [ ] JSX (.jsx/.tsx)
+  - [ ] HTML
+  - [ ] CSS
+  - [ ] SASS/SCSS
+  - [ ] React
+  - [ ] Webpack
+  - [ ] Python
+  - [ ] Node
+  - [ ] Play
+  - [ ] Jest
+  - [ ] Redux
+  - [ ] Proptypes
+  - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
+- [ ] Debuggers
+  - [ ] Firefox
+  - [ ] Jest
+  - [ ] Python
+  - [ ] Scala
+  - [ ] Java
+  - [ ] Rust
+
+## Nice to Have
+
+- [ ] Test runners - <https://vimawesome.com/plugin/vim-test-all-too-well>
+  - [ ] Wallaby.js
+  - [ ] Jest
+  - [ ] Unittest
+  - [ ] Pytest
+  - [ ] SBTtest
+  - [ ] Rust
+- [ ] Import cost
+- [ ] CSS spy class completion (HTML/JS/TS)
+- [ ] Version lens for package.json
+- [ ] JS refactor tools
+- [ ] NPM dependency links
+- [ ] NPM commands
+- [ ] NPM link status
+- [ ] TODO list
+- [ ] Color picker
+- [ ] Compile progress
+  - [ ] Webpack
+  - [ ] Java
+  - [ ] Scala
+  - [ ] Rust
+- [ ] Findall/grep interface
+- [ ] CSS browser compatibility in docs
+- [ ] JS browser compatibility in docs
+- [ ] Detect tab length
+- [ ] Sidebar icons - <https://vimawesome.com/plugin/vim-devicons>
+- [ ] Markdown preview - <https://github.com/vimlab/mdn.vim>
+- [ ] Undo tree - <https://github.com/mbbill/undotree>
+- [ ] Organize this list
+- [ ] Collapsible code blocks
+- [ ] Spellcheck (especially in git commit message)
+- [ ] Symbol outline tree
+- [ ] Expand current file in NERDtree
+- [ ] Sort lines
+- [ ] Sort JSON

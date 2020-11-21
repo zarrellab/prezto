@@ -5,16 +5,25 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+### PATH ###
 # Init PATH
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:"
-# Ruby
-export PATH="/home/bz/.gem/ruby/2.5.0/bin:"
-# Windows
-export PATH="/mnt/c/Users/zarre/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Windows/System32:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+# Windows PATH
+export SYSTEM32="/mnt/c/Windows/System32"
+if [[ -d $SYSTEM32 ]]; then
+  # Windows Apps
+  export PATH="/mnt/c/Users/zarre/AppData/Local/Programs/Microsoft VS Code/bin:$SYSTEM32:$PATH"
+fi
+# Mac PATH
+if [[ "$OSTYPE" == darwin* ]]; then
+  # Homebrew curl
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+fi
 # Rust Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
+### PATH ###
 
 #
 # Browser
@@ -54,7 +63,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{bin,sbin}
+  /usr/local/{opt/coreutils/libexec/gnubin,bin,sbin}
   $path
 )
 
@@ -75,3 +84,10 @@ fi
 
 # Java Version Manager
 eval "$(jenv init -)"
+
+# Display for apps running in WSL2
+SYSTEM32="/mnt/c/Windows/System32"
+if [[ -d $SYSTEM32 ]]; then
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+  sudo /etc/init.d/dbus start &> /dev/null
+fi

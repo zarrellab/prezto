@@ -1,22 +1,34 @@
 #
 # Loads the Node Version Manager and enables npm completion.
 #
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Zeh Rizzatti <zehrizzatti@gmail.com>
+#
 
-# Return if requirements are not found.
-if (( ! $+commands[node] )); then
-  return 1
-fi
+# Load NPM and known helper completions.
+typeset -A compl_commands=(
+  npm   'npm completion'
+  grunt 'grunt --completion=zsh'
+  gulp  'gulp --completion=zsh'
+)
 
-# Load NPM completion.
-if (( $+commands[npm] )); then
-  cache_file="${TMPDIR:-/tmp}/prezto-node-cache.$UID.zsh"
+for compl_command in "${(k)compl_commands[@]}"; do
+  if (( $+commands[$compl_command] )); then
+    cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/prezto/$compl_command-cache.zsh"
 
-  if [[ "$commands[npm]" -nt "$cache_file" || ! -s "$cache_file" ]]; then
-    # npm is slow; cache its output.
-    npm completion >! "$cache_file" 2> /dev/null
+    # Completion commands are slow; cache their output if old or missing.
+    if [[ "$commands[$compl_command]" -nt "$cache_file" \
+          || "${ZDOTDIR:-$HOME}/.zpreztorc" -nt "$cache_file" \
+          || ! -s "$cache_file" ]]; then
+      mkdir -p "$cache_file:h"
+      command ${=compl_commands[$compl_command]} >! "$cache_file" 2> /dev/null
+    fi
+
+    source "$cache_file"
+
+    unset cache_file
   fi
+done
 
-  source "$cache_file"
-
-  unset cache_file
-fi
+unset compl_command{s,}
