@@ -4,7 +4,12 @@
 echo 'installing related utils...'
 
 # Open Docker
-open /Applications/Docker.app
+if [[ $OSTYPE == darwin* ]]; then
+  open /Applications/Docker.app
+fi
+if [[ -d "/mnt/c/Windows/System32" ]]; then
+  /mnt/c/Program\ Files/Docker/Docker/Docker\ Desktop.exe
+fi
 
 # vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -20,16 +25,26 @@ nvm
 nvm install --lts
 npm i -g npm
 
+# Upgrade pip
+sudo pip3 install --upgrade pip3
+
 # Neovim utils
 pip3 install pynvim
 npm i -g neovim
 
 # Set java in jenv
-jenv add /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home
-jenv global 15
+if [[ $OSTYPE == darwin* ]]; then
+  jenv add /usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
+fi
+if [[ $OSTYPE == linux* ]]; then
+  add /usr/lib/jvm/java-11-openjdk-amd64
+fi
+jenv global 11
 jenv enable-plugin maven
 jenv enable-plugin export
-sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+if [[ $OSTYPE == darwin* ]]; then
+  sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+fi
 
 # Create private env file
 touch ~/.zshprivate

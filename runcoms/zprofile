@@ -29,7 +29,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 # Browser
 #
 
-if [[ "$OSTYPE" == darwin* ]]; then
+if [[ $OSTYPE == darwin* ]]; then
   export BROWSER='open'
 fi
 
@@ -86,7 +86,6 @@ fi
 eval "$(jenv init -)"
 
 # Display for apps running in WSL2
-SYSTEM32="/mnt/c/Windows/System32"
 if [[ -d $SYSTEM32 ]]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
   sudo /etc/init.d/dbus start &> /dev/null

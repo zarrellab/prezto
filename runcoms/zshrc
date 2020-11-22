@@ -12,6 +12,7 @@ alias v='nvim'
 alias shelltime='for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done'
 alias vs='code'
 alias www='git checkout stage && git pull upstream stage && npm i && bundle'
+alias apt-update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -23,8 +24,9 @@ alias www='git checkout stage && git pull upstream stage && npm i && bundle'
 # rustup Autocomplete
 fpath+=~/.zfunc
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-[ -f ~/.fzf.colors ] && source ~/.fzf.colors
+if [[ $OSTYPE == darwin* ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 function detect_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
@@ -36,3 +38,4 @@ commit () {
 
 # Fuzzy finder commands
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.colors ] && source ~/.fzf.colors

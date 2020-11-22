@@ -17,14 +17,23 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   echo "${rcfile:t} successfully linked"
 done
 
-echo 'linking iterm2 colors...'
-ln -s $HOME/.zprezto/modules/zsh/base16-iterm2 $HOME/base16-iterm2
+if [[ $OSTYPE == darwin* ]]; then
+  echo 'linking iterm2 colors...'
+  ln -s $HOME/.zprezto/modules/zsh/base16-iterm2 $HOME/base16-iterm2
+fi
 
 echo 'ensuring module updates...'
 zprezto-update
 
 echo 'setting zsh as default user shell...'
-chsh -s /usr/local/bin/zsh
+if [[ $OSTYPE == darwin* ]]; then
+  chsh -s /usr/local/bin/zsh
+fi
+if [[ $OSTYPE == linux* ]]; then
+  chsh -s /usr/bin/zsh
+fi
 
-echo 'opening iterm...'
-open /Applications/iTerm.app
+if [[ $OSTYPE == darwin* ]]; then
+  echo 'opening iterm...'
+  open /Applications/iTerm.app
+fi
