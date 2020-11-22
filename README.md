@@ -11,58 +11,58 @@ and prompt themes.
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.11.
 
-  1. Install mac developer tools
+1. (Mac) Install mac developer tools:
 
-     ```console
-     xcode-select --install
-     ```
+   ```console
+   xcode-select --install
+   ```
 
-  1. Clone the repository:
+1. Clone the repository:
 
-     ```console
-     git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-     ```
+   ```console
+   git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+   ```
 
-  1. Run the homebrew initialization script:
+1. (Mac) Run the homebrew initialization script:
 
-     ```console
-     source ~/.zprezto/scripts/init-brew.sh
-     ```
+   ```console
+   source ~/.zprezto/scripts/init-brew.sh
+   ```
 
-  1. Run the zprezto initialization script:
+1. Run the zprezto initialization script:
 
-     ```console
-     source ~/.zprezto/scripts/init-zprezto.zsh
-     ```
+   ```console
+   source ~/.zprezto/scripts/init-zprezto.zsh
+   ```
 
-  1. Iterm2 should've opened. You should move there now and quit terminal.
+1. (Mac) Iterm2 should've opened. You should move there now and quit terminal.
 
-  1. Run the util initialization script:
+1. Run the util initialization script:
 
-     ```console
-     source ~/.zprezto/scripts/init-utils.zsh
-     ```
+   ```console
+   source ~/.zprezto/scripts/init-utils.zsh
+   ```
 
-  1. (Optional) Run the recommended apps script:
+1. (Optional) Run the recommended apps script:
 
-     ```console
-     source ~/.zprezto/scripts/recommended-apps.zsh
-     ```
+   ```console
+   source ~/.zprezto/scripts/recommended-apps.zsh
+   ```
 
-  1. (Optional) Set iterm2 colors:
+1. (Mac, Optional) Set iterm2 colors:
 
-     1. Open iterm2
-     1. Go to Preferences > Profiles > Colors
-     1. Click on the "Color Presets..." dropdown
-     1. Select "Import..."
-     1. Select Your home folder > base16-iterm2 > Choose a color theme with 256
-     1. Click on the "Color Presets..." dropdown again
-     1. Select your imported colorscheme
+   1. Open iterm2
+   1. Go to Preferences > Profiles > Colors
+   1. Click on the "Color Presets..." dropdown
+   1. Select "Import..."
+   1. Select Your home folder > base16-iterm2 > Choose a color theme with 256
+   1. Click on the "Color Presets..." dropdown again
+   1. Select your imported colorscheme
 
 ## Troubleshooting
 
-If you are not able to find certain commands after switching to *Prezto*,
-modify the `PATH` variable in *~/.zprofile* then open a new Zsh terminal
+If you are not able to find certain commands after switching to _Prezto_,
+modify the `PATH` variable in _~/.zprofile_ then open a new Zsh terminal
 window or tab.
 
 ## Updating
@@ -87,35 +87,35 @@ accompanying README files to learn of what is available.
 
 ## Modules
 
-  1. Browse */modules* to see what is available.
-  1. Load the modules you need in *~/.zpreztorc* then open a new Zsh terminal
-     window or tab.
+1. Browse _/modules_ to see what is available.
+1. Load the modules you need in _~/.zpreztorc_ then open a new Zsh terminal
+   window or tab.
 
 ## Themes
 
-  1. For a list of themes, type `prompt -l`.
-  1. To preview a theme, type `prompt -p name`.
-  1. Load the theme you like in *~/.zpreztorc* then open a new Zsh terminal
-     window or tab.
+1. For a list of themes, type `prompt -l`.
+1. To preview a theme, type `prompt -p name`.
+1. Load the theme you like in _~/.zpreztorc_ then open a new Zsh terminal
+   window or tab.
 
-     ![sorin theme][2]
-     Note that the 'git' module may be required for special symbols to appear,
-     such as those on the right of the above image. Add `'git'` to the `pmodule`
-     list (under `zstyle ':prezto:load' pmodule \` in your *~/.zpreztorc*) to
-     enable this module.
+   ![sorin theme][2]
+   Note that the 'git' module may be required for special symbols to appear,
+   such as those on the right of the above image. Add `'git'` to the `pmodule`
+   list (under `zstyle ':prezto:load' pmodule \` in your _~/.zpreztorc_) to
+   enable this module.
 
 ## External Modules
 
-  1. By default modules will be loaded from */modules* and */contrib*.
-  1. Additional module directories can be added to the
-     `:prezto:load:pmodule-dirs` setting in *~/.zpreztorc*.
+1. By default modules will be loaded from _/modules_ and _/contrib_.
+1. Additional module directories can be added to the
+   `:prezto:load:pmodule-dirs` setting in _~/.zpreztorc_.
 
-     Note that module names need to be unique or they will cause an error when
-     loading.
+   Note that module names need to be unique or they will cause an error when
+   loading.
 
-     ```sh
-     zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
-     ```
+   ```sh
+   zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+   ```
 
 ## Customization
 
