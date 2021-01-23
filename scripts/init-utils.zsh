@@ -7,7 +7,8 @@ echo 'installing related utils...'
 if [[ $OSTYPE == darwin* ]]; then
   open /Applications/Docker.app
 fi
-if [[ -d "/mnt/c/Windows/System32" ]]; then
+local WINDOWS=/mnt/c/Windows
+if [[ -d $WINDOWS ]]; then
   /mnt/c/Program\ Files/Docker/Docker/Docker\ Desktop.exe
 fi
 
@@ -26,7 +27,7 @@ nvm install --lts
 npm i -g npm
 
 # Upgrade pip
-sudo pip3 install --upgrade pip3
+sudo pip3 install --upgrade pip
 
 # Neovim utils
 pip3 install pynvim
@@ -37,7 +38,7 @@ if [[ $OSTYPE == darwin* ]]; then
   jenv add /usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 fi
 if [[ $OSTYPE == linux* ]]; then
-  add /usr/lib/jvm/java-11-openjdk-amd64
+  jenv add /usr/lib/jvm/java-11-openjdk-amd64
 fi
 jenv global 11
 jenv enable-plugin maven

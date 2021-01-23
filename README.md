@@ -23,10 +23,10 @@ version is 4.3.11.
    git clone --recursive https://github.com/zarrellab/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
    ```
 
-1. (Mac) Run the homebrew initialization script:
+1. (Mac) Run the needed packages initialization script:
 
    ```console
-   source ~/.zprezto/scripts/init-brew.sh
+   source ~/.zprezto/scripts/init-packages.sh
    ```
 
 1. Run the zprezto initialization script:
@@ -41,6 +41,31 @@ version is 4.3.11.
 
    ```console
    source ~/.zprezto/scripts/init-utils.zsh
+   ```
+
+1. (Windows) Give passwordless permission to UI bridge:
+
+   ```console
+   sudo visudo -f /etc/sudoers.d/dbus
+   ```
+
+   Then copy:
+   ```console
+   bz ALL = (root) NOPASSWD: /etc/init.d/dbus
+   ```
+
+   Save and exit nano.
+
+1. (Windows) Allow internet access through VPN by allowing DNS:
+
+   ```console
+   sudo nvim /etc/resolv.conf
+   ```
+
+   Then copy:
+   ```console
+   nameserver 1.1.1.1
+   nameserver 1.0.0.1
    ```
 
 1. (Optional) Run the recommended apps script:

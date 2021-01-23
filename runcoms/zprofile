@@ -9,18 +9,17 @@
 # Init PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # Windows PATH
-export SYSTEM32="/mnt/c/Windows/System32"
-if [[ -d $SYSTEM32 ]]; then
+local WINDOWS="/mnt/c/Windows"
+if [[ -d $WINDOWS ]]; then
   # Windows Apps
-  export PATH="/mnt/c/Users/zarre/AppData/Local/Programs/Microsoft VS Code/bin:$SYSTEM32:$PATH"
+  export PATH="/usr/games:/usr/local/games:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/bz/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bz/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
 fi
 # Mac PATH
 if [[ "$OSTYPE" == darwin* ]]; then
   # Homebrew curl
   export PATH="/usr/local/opt/curl/bin:$PATH"
 fi
-# Rust Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
 ### PATH ###
@@ -40,6 +39,12 @@ fi
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PAGER='less'
+
+#
+# Security
+#
+
+export GPG_TTY=$(tty) # Prevents GPG error
 
 #
 # Language
@@ -86,7 +91,7 @@ fi
 eval "$(jenv init -)"
 
 # Display for apps running in WSL2
-if [[ -d $SYSTEM32 ]]; then
+if [[ -d $WINDOWS ]]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-  sudo /etc/init.d/dbus start &> /dev/null
+  /etc/init.d/dbus start &> /dev/null
 fi

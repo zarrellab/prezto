@@ -33,8 +33,26 @@ fi
 
 if [[ $OSTYPE == linux* ]]; then
   echo 'installing necassary packages...'
-  sudo apt update
-  sudo apt install -y curl docker fasd git htop make neovim openjdk-11-jdk python3 python3-pip zsh
+  sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+  sudo apt install -y\
+    curl\
+    docker\
+    fasd\
+    git\
+    htop\
+    libasound2
+    libgconf-2-4\
+    libgtk-3-dev\
+    libnotify-dev\
+    libnss3\
+    libxss1\
+    make\
+    neovim\
+    openjdk-11-jdk\
+    python\
+    python3-pip\
+    python3\
+    zsh\
 
   git clone https://github.com/base16-manager/base16-manager.git ~/.base16-manager
   (cd ~/.base16-manager && sudo make install)
